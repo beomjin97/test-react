@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+TDD (Test-Driven-Development)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 코드 작성 전에 test코드를 작성
+- 테스트에 따라서 코드를 작성
+- red-green testing
+  - 코드 작성 전에는 테스트가 실패하게
+  - 코드 작성 후에는 테스트 통과하도록
+- 테스트 코드가 코드 작성의 일부분으로 느끼도록
+- 테스트 코드는 맨 마지막에 하는 따분한 어떤 것이 아님
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+React-testing-library
 
-### `npm start`
+- 테스트를 위한 vitural DOM 생성
+- 브라우저 없어도 됨
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Jest
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- test code runner
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Unit-test
 
-### `npm run build`
+- 고립된 하나의 컴포넌트 테스트
+- 실제 사용자가 소프트웨어랑 상호작용하는 것보다는 코드 그 자체를 테스트하는 것에 가까움
+- 최대한 고립시켜야 하기때문에 의존성들을 mocking해서 사용
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+E2E test
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 실제 브라우저와 서버를 사용해서 test (Cypress 등)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Integration test
 
-### `npm run eject`
+- 많은 유닛들이 얼마나 잘 협력하는가 테스트
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Functional test
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 소프트웨어의 특정 기능 테스트
+- 실제 사용자가 소프트웨어랑 잘 상호작용하는 것이 중요함
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+요소를 찾는 접근 우선순위
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- https://testing-library.com/docs/guide-which-query/
 
-### Code Splitting
+역할의 정의
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https://www.w3.org/TR/wai-aria/#role_definitions
