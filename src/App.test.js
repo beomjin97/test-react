@@ -1,8 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("버튼의 초기색상과 클릭시에 변경된 색상 테스트", () => {
   render(<App />);
-  const linkElement = screen.getByRole("link", { name: /learn React/i });
-  expect(linkElement).toBeInTheDocument();
+  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+
+  expect(colorButton).toHaveStyle({
+    backgroundColor: "red",
+  });
+
+  fireEvent.click(colorButton);
+
+  expect(colorButton).toHaveStyle({ backgroundColor: "blue" });
+
+  expect(colorButton).toHaveTextContent("Change to red");
 });
