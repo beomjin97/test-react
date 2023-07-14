@@ -1,3 +1,4 @@
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 
 function App() {
@@ -17,10 +18,13 @@ function App() {
       </button>
       <input
         type="checkbox"
+        id="disable-button-checkbox"
+        defaultChecked={isDisabled}
         onChange={(e) => {
           setIsDisable(e.target.checked);
         }}
       />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
