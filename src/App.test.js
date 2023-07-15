@@ -36,3 +36,29 @@ test("체크박스 선택시 버튼 비활성화", () => {
   fireEvent.click(checkbox);
   expect(button).not.toBeDisabled();
 });
+
+test("disable 버튼은 gray 배경색을 갖고 있고 red로 바뀜", () => {
+  render(<App />);
+  const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
+  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle("background-color: gray");
+
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle("background-color: red");
+});
+
+test("gray 배경색을 가지고 있는 disabled button이 클릭되면 blue로 전환됨", () => {
+  render(<App />);
+  const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
+  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+
+  fireEvent.click(colorButton);
+
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle("background-color: gray");
+
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle("background-color: blue");
+});
