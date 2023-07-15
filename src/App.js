@@ -1,6 +1,10 @@
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 
+export function replaceCamelWithSpaces(colorName) {
+  return colorName.replace(/\B([A-Z])\B/g, " ");
+}
+
 function App() {
   const [buttonColor, setButtonColor] = useState("red");
   const newButtonColor = buttonColor === "red" ? "blue" : "red";
