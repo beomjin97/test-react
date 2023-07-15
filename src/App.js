@@ -2,7 +2,7 @@ import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 
 export function replaceCamelWithSpaces(colorName) {
-  return colorName.replace(/\B([A-Z])\B/g, " ");
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
 }
 
 function App() {
