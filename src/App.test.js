@@ -35,7 +35,7 @@ test("체크박스 선택시 버튼 비활성화", () => {
   expect(button).toBeDisabled();
 
   fireEvent.click(checkbox);
-  expect(button).not.toBeDisabled();
+  expect(button).toBeEnabled();
 });
 
 test("disable 버튼은 gray 배경색을 갖고 있고 red로 바뀜", () => {
